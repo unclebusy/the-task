@@ -1,10 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import YouTubeSection from '../components/YouTubeSection.tsx';
+import VideoSection from '../components/VideoSection.tsx';
+import ArticlesSection from '../components/ArticlesSection.tsx';
+import LessSection from '../components/LessSection.tsx';
 
 const Main: React.FC = () => {
   return <>
-    <YouTubeSection />
+    <VideoSection />
+    <ArticlesSection />
+    <LessSection />
   </>
 };
 
