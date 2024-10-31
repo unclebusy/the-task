@@ -1,83 +1,85 @@
 import * as React from 'react';
 import { Box, Button, Paper, TextField } from '@mui/material';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 interface ContactFormProps {
   onSubmit: () => void;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({onSubmit}) => {
-  const [values, setValues] = React.useState({ name: '', email: '', message: '' });
-  const [errors, setErrors] = React.useState({ name: false, email: false, message: false });
+const validationSchema = Yup.object({
+  name: Yup.string().matches(/^[A-Za-zА-Яа-яЁё\s]+$/, 'Only letters are allowed') .required('This field is required'),
+  email: Yup.string().email('Invalid email address').required('This field is required'),
+  message: Yup.string().required('This field is required'),
+});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setValues({ ...values, [id]: value });
-
-    if (value) {
-      setErrors({ ...errors, [id]: false });
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const newErrors = {
-      name: values.name === '',
-      email: values.email === '',
-      message: values.message === '',
-    };
-    setErrors(newErrors);
-
-    const hasError = Object.values(newErrors).some(error => error);
-    if (!hasError) {
-
-      console.log(`Thank you for your interest, ${values.name}!`);
-      onSubmit();
-    }
-  };
-
+const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   return (
-    <Paper elevation={3} sx={{ padding: {xs: 2, sm: 4, md: 4},  width: { xs: 360, sm: 400, md: 400 }, }}>
-      <Box
-        component="form"
-        noValidate
-        autoComplete="off"
-        display="flex"
-        flexDirection="column"
-        gap={2}
-        marginBottom={2}
-      >
-        <TextField id="name" label="Name" value={values.name} onChange={handleChange} error={errors.name}
-                   helperText={errors.name ? 'This field is required' : ''} />
-        <TextField id="email" label="Email" value={values.email} onChange={handleChange} error={errors.email}
-                   helperText={errors.email ? 'This field is required' : ''} />
-        <TextField
-          multiline
-          minRows={4}
-          id="message"
-          label="Message"
-          value={values.message}
-          onChange={handleChange}
-          error={errors.message}
-          helperText={errors.message ? 'This field is required' : ''}
-        />
-      </Box>
-      <Button
-        type="submit"
-        variant="contained"
-        fullWidth
-        sx={{
-          mt: 2,
-          bgcolor: '#333',
-          color: '#fff',
-          '&:hover': { bgcolor: '#555' },
+    <Paper
+      elevation={3}
+      sx={{
+        padding: { xs: 2, sm: 4, md: 4 },
+        width: { xs: 360, sm: 400, md: 400 },
+      }}
+    >
+      <Formik
+        initialValues={{ name: '', email: '', message: '' }}
+        validationSchema={validationSchema}
+        onSubmit={(values, { resetForm }) => {
+          console.log(`Thank you for your interest, ${values.name}!`);
+          onSubmit();
+          resetForm();
         }}
-        onClick={handleSubmit}
       >
-        Submit
-      </Button>
+        {({ errors, touched }) => (
+          <Form noValidate autoComplete="off">
+            <Box display="flex" flexDirection="column" gap={2} marginBottom={2}>
+              <Field
+                as={TextField}
+                id="name"
+                name="name"
+                label="Name"
+                error={touched.name && !!errors.name}
+                helperText={<ErrorMessage name="name" />}
+              />
+              <Field
+                as={TextField}
+                id="email"
+                name="email"
+                label="Email"
+                error={touched.email && !!errors.email}
+                helperText={<ErrorMessage name="email" />}
+              />
+              <Field
+                as={TextField}
+                multiline
+                minRows={4}
+                id="message"
+                name="message"
+                label="Message"
+                error={touched.message && !!errors.message}
+                helperText={<ErrorMessage name="message" />}
+              />
+            </Box>
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              sx={{
+                mt: 2,
+                bgcolor: '#333',
+                color: '#fff',
+                '&:hover': { bgcolor: '#555' },
+              }}
+            >
+              Submit
+            </Button>
+          </Form>
+        )}
+      </Formik>
     </Paper>
   );
 };
 
 export default ContactForm;
+
