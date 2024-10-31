@@ -12,22 +12,49 @@ const SectionContainer = styled.section`
   padding: 1rem;
   background-color: #e5e4e2;
 
-  @media (min-width: 1200px) {
-    width: 1200px;
-    padding: 2rem;
+  h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2rem;
 
     h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    width: 1200px;
+
+    h1 {
+      font-size: 2rem;
       margin-bottom: 3rem;
     }
   }
 `;
 
+const ConfirmationMessage = styled.div`
+  font-size: 2rem;
+  color: #333;
+`;
+
+
 const ContactUs: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
   return (
     <SectionContainer>
-      <h1>Only CTA on the page</h1>
-      <ContactForm />
+      {isSubmitted ? (
+        <ConfirmationMessage>Message generated on the server</ConfirmationMessage>
+      ) : (
+        <>
+          <h1>Only CTA on the page</h1>
+          <ContactForm onSubmit={() => setIsSubmitted(true)} />
+        </>
+      )}
     </SectionContainer>
   );
 };

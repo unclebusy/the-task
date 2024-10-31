@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import ContactButton from './ContactButton.tsx';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -13,6 +14,10 @@ const HeaderContainer = styled.header`
   padding: 0.5rem;
   z-index: 1000;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+  p {
+    cursor: pointer;
+  }
 
   @media (min-width: 768px) {
     padding: 1rem;
@@ -41,10 +46,12 @@ const HeaderWrapper = styled.div`
 `;
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <HeaderContainer>
       <HeaderWrapper>
-        <p>Some Company</p>
+        <p onClick={() => navigate('/')}>Some Company</p>
         <ContactButton />
       </HeaderWrapper>
     </HeaderContainer>
