@@ -82,7 +82,7 @@ const VideoContainer = styled.aside`
     width: 100%;
     height: 100%;
   }
-  
+
   @media (min-width: 1200px) {
     max-width: 560px;
   }
@@ -94,16 +94,17 @@ const VideoSection: React.FC = () => {
       <TitleSection>
         <h1>Most important title on the page</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum ultrices, sem urna
-          convallis metus, vel suscipit nibh lacus tincidunt ante.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+          mattis, leo et condimentum ultrices, sem urna convallis metus, vel
+          suscipit nibh lacus tincidunt ante.
         </p>
       </TitleSection>
       <VideoContainer>
         <lite-youtube
           videoid="dQw4w9WgXcQ"
           params="autoplay=1&controls=1"
-          title="YouTube video player">
-        </lite-youtube>
+          title="YouTube video player"
+        ></lite-youtube>
       </VideoContainer>
     </SectionContainer>
   );

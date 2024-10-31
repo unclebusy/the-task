@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
   position: sticky;
@@ -11,14 +11,14 @@ const FooterContainer = styled.footer`
   text-align: center;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
 
-  p{
+  p {
     font-size: 0.5rem;
   }
 
   @media (min-width: 768px) {
     padding: 1rem;
-    
-    p{
+
+    p {
       font-size: 1rem;
     }
   }
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
     <FooterContainer>
       <p>Some Company 2024</p>
     </FooterContainer>
-  )
-}
+  );
+};
 
 export default Footer;

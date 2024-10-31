@@ -5,7 +5,12 @@ import { useNavigate } from 'react-router-dom';
 const ContactButton: React.FC = () => {
   const navigate = useNavigate();
 
-  return (<Button variant="contained" color="inherit" onClick={() => navigate('/contact')}>Contact Us</Button>);
+  return (
+    <Button
+      variant="contained" sx={{ bgcolor: '#333', color: '#fff', '&:hover': { bgcolor: '#555' }, }}
+      onClick={() => navigate('/contact')}>
+      Contact Us
+    </Button>);
 };
 
 export default ContactButton;

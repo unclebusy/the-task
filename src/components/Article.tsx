@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import styled from 'styled-components';
 
 const ArticleContainer = styled.article`
@@ -14,7 +14,7 @@ interface ArticleProps {
   text: string;
 }
 
-const Article: React.FC<ArticleProps > = ({title, text}) => {
+const Article: React.FC<ArticleProps> = ({ title, text }) => {
   return (
     <ArticleContainer>
       <h4>{title}</h4>

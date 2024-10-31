@@ -24,7 +24,7 @@ const HeaderWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  
+
   p {
     font-size: 1.5rem;
   }
@@ -34,21 +34,21 @@ const HeaderWrapper = styled.div`
       font-size: 1.5rem;
     }
   }
-  
+
   @media (min-width: 1200px) {
     width: 1200px;
   }
 `;
 
 const Header: React.FC = () => {
-
-  return (<HeaderContainer>
-    <HeaderWrapper>
-      <p>Some Company</p>
-      <ContactButton />
-    </HeaderWrapper>
-  </HeaderContainer>);
-
+  return (
+    <HeaderContainer>
+      <HeaderWrapper>
+        <p>Some Company</p>
+        <ContactButton />
+      </HeaderWrapper>
+    </HeaderContainer>
+  );
 };
 
 export default Header;

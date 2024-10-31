@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Button } from '@mui/material';
 import ContactButton from './ContactButton.tsx';
 
 const SectionContainer = styled.section`
@@ -24,7 +23,6 @@ const SectionContainer = styled.section`
       font-size: 1.5rem;
       margin-bottom: 2rem;
     }
-
   }
 
   @media (min-width: 1200px) {
@@ -40,10 +38,10 @@ const SectionContainer = styled.section`
 
 const LessSection: React.FC = () => {
   return (
-  <SectionContainer>
-    <h3>Less important title</h3>
-    <ContactButton />
-  </SectionContainer>
+    <SectionContainer>
+      <h3>Less important title</h3>
+      <ContactButton />
+    </SectionContainer>
   );
 };
 

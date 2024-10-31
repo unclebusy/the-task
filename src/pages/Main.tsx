@@ -4,11 +4,13 @@ import ArticlesSection from '../components/ArticlesSection.tsx';
 import LessSection from '../components/LessSection.tsx';
 
 const Main: React.FC = () => {
-  return <>
-    <VideoSection />
-    <ArticlesSection />
-    <LessSection />
-  </>
+  return (
+    <>
+      <VideoSection />
+      <ArticlesSection />
+      <LessSection />
+    </>
+  );
 };
 
 export default Main;

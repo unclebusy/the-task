@@ -13,7 +13,6 @@ const SectionContainer = styled.section`
   h2 {
     font-size: 1.3rem;
   }
-}
 
   @media (min-width: 768px) {
     padding: 2rem 2rem 3rem 2rem;
@@ -22,7 +21,8 @@ const SectionContainer = styled.section`
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
-
+  }
+  
   @media (min-width: 1200px) {
     width: 1200px;
     padding: 2rem 2rem 3rem 2rem;
@@ -46,7 +46,6 @@ const ArticlesContainer = styled.div`
     gap: 2rem;
     margin: 2rem 0 3rem 0;
     padding: 0 1rem 0 1rem;
-    
   }
 
   @media (min-width: 1200px) {
@@ -56,34 +55,40 @@ const ArticlesContainer = styled.div`
   }
 `;
 
-const articles = [{
-  id: 0,
-  title: 'Title',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
-}, {
-  id: 1,
-  title: 'Title',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
-}, {
-  id: 2,
-  title: 'Title',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
-}, {
-  id: 3,
-  title: 'Title',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
-}, {
-  id: 4,
-  title: 'Title',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
-}, {
-  id: 5,
-  title: 'Title',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
-}];
+const articles = [
+  {
+    id: 0,
+    title: 'Title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
+  },
+  {
+    id: 1,
+    title: 'Title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
+  },
+  {
+    id: 2,
+    title: 'Title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
+  },
+  {
+    id: 3,
+    title: 'Title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
+  },
+  {
+    id: 4,
+    title: 'Title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
+  },
+  {
+    id: 5,
+    title: 'Title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum',
+  },
+];
 
 const ArticlesSection: React.FC = () => {
-
   return (
     <SectionContainer>
       <h2>Also very important title</h2>
