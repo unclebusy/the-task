@@ -48,6 +48,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 label="Name"
                 error={touched.name && !!errors.name}
                 helperText={<ErrorMessage name="name" />}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#555555', // Цвет рамки при фокусе
+                    },
+                    '&.Mui-focused .MuiInputBase-input': {
+                      color: '#555555', // Цвет текста при фокусе
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    '&.Mui-focused': {
+                      color: '#555555', // Цвет лейбла при фокусе
+                    },
+                  },
+                }}
               />
               <Field
                 as={TextField}
@@ -56,6 +71,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 label="Email"
                 error={touched.email && !!errors.email}
                 helperText={<ErrorMessage name="email" />}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#555555',
+                    },
+                    '&.Mui-focused .MuiInputBase-input': {
+                      color: '#555555',
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    '&.Mui-focused': {
+                      color: '#555555',
+                    },
+                  },
+                }}
               />
               <Field
                 as={TextField}
@@ -66,7 +96,23 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 label="Message"
                 error={touched.message && !!errors.message}
                 helperText={<ErrorMessage name="message" />}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#555555',
+                    },
+                    '&.Mui-focused .MuiInputBase-input': {
+                      color: '#555555',
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    '&.Mui-focused': {
+                      color: '#555555',
+                    },
+                  },
+                }}
               />
+
             </Box>
             <Button
               type="submit"
