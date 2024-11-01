@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Article from './Article.tsx';
+import Article from './ArticleCard.tsx';
 import ContactButton from './ContactButton.tsx';
 
 const SectionContainer = styled.section`

@@ -3,7 +3,7 @@ import VideoSection from '../components/VideoSection.tsx';
 import ArticlesSection from '../components/ArticlesSection.tsx';
 import LessSection from '../components/LessSection.tsx';
 
-const Main: React.FC = () => {
+const MainPage: React.FC = () => {
   return (
     <>
       <VideoSection />
@@ -13,4 +13,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;
+export default MainPage;

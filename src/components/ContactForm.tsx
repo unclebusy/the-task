@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Box, Button, Paper, TextField } from '@mui/material';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { Box, Button, Paper, TextField } from '@mui/material';
+
 
 interface ContactFormProps {
   onSubmit: () => void;
@@ -25,10 +27,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
       <Formik
         initialValues={{ name: '', email: '', message: '' }}
         validationSchema={validationSchema}
-        onSubmit={(values, { resetForm }) => {
-          console.log(`Thank you for your interest, ${values.name}!`);
-          onSubmit();
-          resetForm();
+        onSubmit={async (values, { resetForm }) => {
+          try {
+            const response = await axios.post('http://localhost:3001/api/contact', values);
+            console.log(response.data.message);
+            onSubmit();
+            resetForm();
+          } catch (error) {
+            console.error("Submission failed", error);
+          }
         }}
       >
         {({ errors, touched }) => (

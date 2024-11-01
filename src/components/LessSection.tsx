@@ -10,6 +10,7 @@ const SectionContainer = styled.section`
   align-items: center;
   padding: 1rem;
   background-color: #e5e4e2;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
 
   h3 {
     font-size: 1.3rem;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
-import Main from './pages/Main.tsx';
-import ContactUs from './pages/ContactUs.tsx';
+import MainPage from './pages/MainPage.tsx';
+import ContactUsPage from './pages/ContactUsPage.tsx';
 
 const AppContainer = styled.div`
   display: flex;
@@ -28,8 +28,8 @@ const App: React.FC = () => {
         <Header />
         <MainContainer>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="contact" element={<ContactUs />} />
+            <Route path="/" element={<MainPage />} />
+            <Route path="contact" element={<ContactUsPage />} />
           </Routes>
         </MainContainer>
         <Footer />

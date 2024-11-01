@@ -42,7 +42,7 @@ const ConfirmationMessage = styled.div`
 `;
 
 
-const ContactUs: React.FC = () => {
+const ContactUsPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   return (
@@ -59,4 +59,4 @@ const ContactUs: React.FC = () => {
   );
 };
 
-export default ContactUs;
+export default ContactUsPage;

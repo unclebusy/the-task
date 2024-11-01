@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
   padding: 0.5rem;
   z-index: 1000;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  
+
   p {
     cursor: pointer;
   }
@@ -51,7 +51,9 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderWrapper>
-        <p onClick={() => navigate('/')}>Some Company</p>
+        <p aria-label="Navigate to homepage" onClick={() => navigate('/')}>
+          Some Company
+        </p>
         <ContactButton />
       </HeaderWrapper>
     </HeaderContainer>

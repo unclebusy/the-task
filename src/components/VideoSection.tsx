@@ -11,6 +11,7 @@ const SectionContainer = styled.section`
   gap: 2rem;
   padding: 1rem;
   background: #e5e4e2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 768px) {
     padding: 1rem 1rem 2rem 1rem;
