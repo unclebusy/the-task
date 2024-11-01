@@ -25,7 +25,7 @@ const SectionContainer = styled.section`
       margin-bottom: 2rem;
     }
   }
-  
+
   @media (min-width: 1200px) {
     width: 1200px;
 
@@ -41,14 +41,15 @@ const ConfirmationMessage = styled.div`
   color: #333;
 `;
 
-
 const ContactUsPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   return (
     <SectionContainer>
       {isSubmitted ? (
-        <ConfirmationMessage>Message generated on the server</ConfirmationMessage>
+        <ConfirmationMessage>
+          Message generated on the server
+        </ConfirmationMessage>
       ) : (
         <>
           <h1>Only CTA on the page</h1>

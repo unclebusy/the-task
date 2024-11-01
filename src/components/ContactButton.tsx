@@ -9,7 +9,7 @@ const ContactButton: React.FC = () => {
     <Button
       aria-label="Contact us"
       variant="contained"
-      sx={{ bgcolor: '#333', color: '#fff', '&:hover': { bgcolor: '#555' }}}
+      sx={{ bgcolor: '#333', color: '#fff', '&:hover': { bgcolor: '#555' } }}
       onClick={() => navigate('/contact')}
     >
       Contact Us

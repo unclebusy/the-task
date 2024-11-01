@@ -22,7 +22,7 @@ const SectionContainer = styled.section`
       margin-bottom: 1rem;
     }
   }
-  
+
   @media (min-width: 1200px) {
     width: 1200px;
     padding: 2rem 2rem 3rem 2rem;
@@ -31,7 +31,6 @@ const SectionContainer = styled.section`
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    
   }
 `;
 

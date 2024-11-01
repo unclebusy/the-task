@@ -4,14 +4,17 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { Box, Button, Paper, TextField } from '@mui/material';
 
-
 interface ContactFormProps {
   onSubmit: () => void;
 }
 
 const validationSchema = Yup.object({
-  name: Yup.string().matches(/^[A-Za-zА-Яа-яЁё\s]+$/, 'Only letters are allowed') .required('This field is required'),
-  email: Yup.string().email('Invalid email address').required('This field is required'),
+  name: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁё\s]+$/, 'Only letters are allowed')
+    .required('This field is required'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('This field is required'),
   message: Yup.string().required('This field is required'),
 });
 
@@ -29,12 +32,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
         validationSchema={validationSchema}
         onSubmit={async (values, { resetForm }) => {
           try {
-            const response = await axios.post('http://localhost:3001/api/contact', values);
+            const response = await axios.post(
+              'http://localhost:3001/api/contact',
+              values
+            );
             console.log(response.data.message);
             onSubmit();
             resetForm();
           } catch (error) {
-            console.error("Submission failed", error);
+            console.error('Submission failed', error);
           }
         }}
       >
@@ -112,7 +118,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                   },
                 }}
               />
-
             </Box>
             <Button
               type="submit"
@@ -135,4 +140,3 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 };
 
 export default ContactForm;
-

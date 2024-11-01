@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import 'lite-youtube-embed';
+import LazyLoadYouTube from './LazyLoadYouTube.tsx';
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -101,11 +102,7 @@ const VideoSection: React.FC = () => {
         </p>
       </TitleSection>
       <VideoContainer>
-        <lite-youtube
-          videoid="dQw4w9WgXcQ"
-          params="autoplay=1&controls=1"
-          title="YouTube video player"
-        ></lite-youtube>
+        <LazyLoadYouTube />
       </VideoContainer>
     </SectionContainer>
   );
